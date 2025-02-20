@@ -6,7 +6,7 @@ const MakeCard = () => {
     {
       rate: "수퍼로우",
       price: "",
-      sit: "",
+      sit: "-",
       charge: 60000,
       penalty: 100000,
       checkedBaggage: 15,
@@ -36,10 +36,16 @@ const MakeCard = () => {
     <>
       {cardData.map((v) => {
         return (
-          <>
+          <div
+            style={{
+              border: "1px solid black",
+              borderRadius: "5px",
+              width: "300px",
+            }}
+          >
             <CardInfo {...v} />
             <CardSubInfo {...v} />
-          </>
+          </div>
         );
       })}
     </>

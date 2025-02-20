@@ -1,6 +1,7 @@
 import { FaMoneyBillWave, FaCreditCard } from "react-icons/fa";
 import { FaBagShopping } from "react-icons/fa6";
 import { LuBaggageClaim } from "react-icons/lu";
+import { MdPadding } from "react-icons/md";
 
 const CardSubInfo = (props) => {
   const subInfoData = [
@@ -36,7 +37,14 @@ const CardSubInfo = (props) => {
         const { id, icon, keyTitle, valueTitle } = v;
         return (
           <>
-            <div key={id}>
+            <div
+              id={id}
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                padding: "20px",
+              }}
+            >
               <span>
                 {icon} {keyTitle}
               </span>
