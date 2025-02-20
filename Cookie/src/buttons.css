@@ -1,0 +1,24 @@
+button {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 20px;
+  border-radius: 5px;
+  border: 2px solid #5b5bd6;
+}
+
+.btnBox {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.viewBtn {
+  color: #5b5bd6;
+  background-color: #e6e7ff;
+}
+
+.downloadBtn {
+  color: white;
+  background-color: #5b5bd6;
+}
