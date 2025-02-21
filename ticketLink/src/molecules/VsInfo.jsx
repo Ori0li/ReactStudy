@@ -1,12 +1,11 @@
-import PlaceText from "../atoms/PlaceText";
-import Versus from "../atoms/Versus";
+import PlaceText from "../atoms/text/PlaceText";
+import Versus from "../atoms/text/Versus";
 
 const VsInfo = (props) => {
-  const { vsTeam, place } = props;
   return (
     <>
-      <Versus vsTeam={vsTeam} />
-      <PlaceText place={place} />
+      <Versus {...props} />
+      <PlaceText {...props} />
     </>
   );
 };

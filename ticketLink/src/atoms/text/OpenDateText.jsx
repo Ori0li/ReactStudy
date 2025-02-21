@@ -1,4 +1,4 @@
-import BaseText from "./text/BaseText";
+import BaseText from "./Base/BaseText";
 
 const OpenDateText = (props) => {
   const { openDate } = props;

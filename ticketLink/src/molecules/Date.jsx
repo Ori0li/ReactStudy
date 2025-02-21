@@ -1,16 +1,25 @@
-import DateText from "../atoms/DateText";
-import DayText from "../atoms/DayText";
-import TimeText from "../atoms/TimeText";
+import DateText from "../atoms/text/DateText";
+import DayText from "../atoms/text/DayText";
+import TimeText from "../atoms/text/TimeText";
 
 const Date = (props) => {
   const { date, day, time } = props;
 
   return (
-    <>
+    <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
       <DateText date={date} />
-      <DayText day={day} />
-      <TimeText time={time} />
-    </>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "start",
+        }}
+      >
+        <DayText day={day} />
+        <TimeText time={time} />
+      </div>
+    </div>
   );
 };
 
