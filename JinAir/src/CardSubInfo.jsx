@@ -1,7 +1,6 @@
 import { FaMoneyBillWave, FaCreditCard } from "react-icons/fa";
 import { FaBagShopping } from "react-icons/fa6";
 import { LuBaggageClaim } from "react-icons/lu";
-import { MdPadding } from "react-icons/md";
 
 const CardSubInfo = (props) => {
   const subInfoData = [
