@@ -1,21 +1,29 @@
 import { useState } from "react";
 
-const Counter = () => {
-  const [num, setNum] = useState(0);
+const Counter = (props) => {
+  const { num, setNum, index } = props;
 
   const plus = () => {
-    setNum((prev) => prev + 1);
+    setNum((prev) => {
+      const newArray = [...prev];
+      newArray[index] += 1;
+      return newArray;
+    });
   };
   const minus = () => {
-    setNum((prev) => (prev > 0 ? prev - 1 : prev));
+    setNum((prev) => {
+      const newArray = [...prev];
+      if (newArray[index] > 0) newArray[index] -= 1;
+      return newArray;
+    });
   };
 
-  const numStyle = () => (num >= 10 ? "blue" : "black");
+  // const numStyle = () => (num >= 10 ? "blue" : "black");
 
   return (
     <div style={{ display: "flex", gap: "20px" }}>
-      <button onClick={minus}> - </button>
-      <div style={{ color: numStyle() }}>{num}</div>
+      <button onClick={minus}>-</button>
+      <div>{num[index]}</div>
       <button onClick={plus}> + </button>
     </div>
   );

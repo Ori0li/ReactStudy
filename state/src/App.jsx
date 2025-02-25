@@ -1,45 +1,36 @@
 import { useState } from "react";
+import Counter from "./Counter";
+import Total from "./Total";
+
+// function App() {
+//   const [inputValue, setInputValue] = useState("");
+
+//   //   const change = (e) => {
+//   //     setInputValue((prev) => e.target.value);
+//   //   };
+
+//   return (
+//     <div style={{ display: "flex", gap: "20px" }}>
+//       <Input type="text" info="Email" event={setInputValue} />
+//       <Length length={inputValue.length} />
+//     </div>
+//   );
+// }
+
+// export default App;
 
 function App() {
-  const coffee = [
-    { name: "바닐라크림콜드브루", price: "5500" },
-    { name: "아메리카노", price: "2000" },
-    { name: "프라푸치노", price: "3500" },
-    { name: "화이트초코", price: "4500" },
-    { name: "카페라떼", price: "4000" },
-  ];
-
-  const [num, setNum] = useState(0);
-
-  const nextMenu = () => {
-    setNum((prev) => {
-      if (prev == 4) {
-        alert("마지막 메뉴 입니다");
-        return prev;
-      } else {
-        return prev + 1;
-      }
-    });
-  };
-
-  const prevMenu = () => {
-    setNum((prev) => {
-      if (prev == 0) {
-        alert("처음 메뉴 입니다");
-        return prev;
-      } else {
-        return prev - 1;
-      }
-    });
-  };
+  const [total, setTotal] = useState(Array(100).fill(0));
 
   return (
-    <div>
-      <button onClick={prevMenu}>이전메뉴</button>
-      <span>메뉴 이름: {coffee[num].name}</span>
-      <span>메뉴 가격:{coffee[num].price}</span>
-      <button onClick={nextMenu}>다음메뉴</button>
-    </div>
+    <>
+      <Counter num={total} setNum={setTotal} index={0} />
+      <Counter num={total} setNum={setTotal} index={1} />
+      <Counter num={total} setNum={setTotal} index={2} />
+      <Counter num={total} setNum={setTotal} index={3} />
+
+      <Total cnt={total.reduce((a, c) => a + c)} />
+    </>
   );
 }
 
