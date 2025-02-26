@@ -1,20 +1,18 @@
-import { useState } from "react";
-
 const Counter = (props) => {
   const { num, setNum, index } = props;
 
   const plus = () => {
     setNum((prev) => {
-      const newArray = [...prev];
-      newArray[index] += 1;
-      return newArray;
+      const newArr = [...prev];
+      newArr[index] += 1;
+      return newArr;
     });
   };
   const minus = () => {
     setNum((prev) => {
-      const newArray = [...prev];
-      if (newArray[index] > 0) newArray[index] -= 1;
-      return newArray;
+      const newArr = [...prev];
+      if (newArr[index] > 0) newArr[index] -= 1;
+      return newArr;
     });
   };
 
