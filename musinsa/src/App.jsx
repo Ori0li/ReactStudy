@@ -28,12 +28,8 @@ function App() {
     });
   };
 
-  const reset = () => {
-    setArr((prev) => {
-      const newArr = [...prev];
-      return newArr.map((v) => ({ ...v, cnt: 10 }));
-    });
-  };
+  const reset = () =>
+    setArr((prev) => [...prev].map((v) => ({ ...v, cnt: 1 })));
 
   return (
     <div style={{ display: "flex", alignItems: "center", gap: "30px" }}>
@@ -53,6 +49,7 @@ function App() {
             <Price price={v.price} cnt={v.cnt} />
             <Counter
               cnt={v.cnt}
+              maxCount={v.maxCount}
               plus={() => {
                 plus(i);
               }}
