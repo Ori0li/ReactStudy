@@ -53,27 +53,6 @@ function App() {
         },
       ],
     },
-    {
-      placeholder: "이메일 입력하세요",
-      inputChange: (e, i) => {
-        setInputs((prev) => {
-          const newArr = [...prev];
-          console.log(newArr);
-          newArr[i].checkers.map((v) => {
-            v.isValid = v.validator(e.target.value);
-            return { ...v };
-          });
-          return newArr;
-        });
-      },
-      checkers: [
-        {
-          text: "@이 필수",
-          isValid: false,
-          validator: (value) => hasAt(value),
-        },
-      ],
-    },
   ]);
 
   return (
